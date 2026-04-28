@@ -116,3 +116,65 @@ export async function deleteTask(taskId: string) {
   revalidatePath('/projects');
   revalidatePath('/dashboard');
 }
+
+export async function uploadProjectFile(formData: FormData) {
+  const { supabase, userId } = await getUserId();
+
+  const projectId = String(formData.get('projectId') || '');
+  const file = formData.get('file') as File | null;
+
+  if (!projectId || !file) {
+    throw new Error('Project and file are required');
+  }
+
+  const fileExt = file.name.split('.').pop();
+  const filePath = `${userId}/${projectId}/${crypto.randomUUID()}.${fileExt}`;
+
+  const { error: uploadError } = await supabase.storage
+    .from('project-files')
+    .upload(filePath, file);
+
+  if (uploadError) {
+    throw new Error(uploadError.message);
+  }
+
+  const { error: dbError } = await supabase.from('project_files').insert({
+    owner_id: userId,
+    project_id: projectId,
+    file_name: file.name,
+    file_path: filePath,
+    file_type: file.type,
+    file_size: file.size,
+  });
+
+  if (dbError) {
+    throw new Error(dbError.message);
+  }
+
+  revalidatePath('/projects');
+  revalidatePath('/dashboard');
+}
+
+export async function deleteProjectFile(fileId: string, filePath: string) {
+  const { supabase } = await getUserId();
+
+  const { error: storageError } = await supabase.storage
+    .from('project-files')
+    .remove([filePath]);
+
+  if (storageError) {
+    throw new Error(storageError.message);
+  }
+
+  const { error: dbError } = await supabase
+    .from('project_files')
+    .delete()
+    .eq('id', fileId);
+
+  if (dbError) {
+    throw new Error(dbError.message);
+  }
+
+  revalidatePath('/projects');
+  revalidatePath('/dashboard');
+}
