@@ -26,7 +26,7 @@ export default async function DashboardLayout({
         <div className='min-h-screen flex-1'>
           <DashboardHeader email={user.email} />
 
-          <div className='p-6'>{children}</div>
+          <div className='p-4 sm:p-6'>{children}</div>
         </div>
       </div>
     </main>

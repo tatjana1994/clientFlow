@@ -6,14 +6,17 @@ type TaskFormProps = {
 
 export function TaskForm({ projectId }: TaskFormProps) {
   return (
-    <form action={createTask} className='mt-5 flex gap-2'>
+    <form
+      action={createTask}
+      className='mt-5 grid gap-2 sm:grid-cols-[1fr_auto_auto]'
+    >
       <input type='hidden' name='projectId' value={projectId} />
 
       <input
         name='title'
         required
         placeholder='Add task...'
-        className='min-w-0 flex-1 rounded-2xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition focus:border-slate-950'
+        className='min-w-0 rounded-2xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition focus:border-slate-950'
       />
 
       <select
