@@ -25,6 +25,13 @@ type Invoice = {
   status: string;
 };
 
+type Message = {
+  id: string;
+  message: string;
+  type: string;
+  created_at: string;
+};
+
 export default async function DashboardPage() {
   const supabase = await createClient();
 
@@ -49,6 +56,7 @@ export default async function DashboardPage() {
     .limit(3);
 
   const typedInvoices = (invoices || []) as Invoice[];
+  const typedMessages = (messages || []) as Message[];
 
   const pendingAmount = typedInvoices
     .filter((invoice) => invoice.status !== 'paid')
@@ -139,7 +147,7 @@ export default async function DashboardPage() {
         ))}
       </div>
 
-      <div className='mt-8 grid gap-5 xl:grid-cols-[1.4fr_0.8fr]'>
+      <div className='mt-8 grid gap-5 xl:grid-cols-3'>
         <div className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'>
           <h3 className='text-lg font-semibold text-slate-950'>
             Recent projects
@@ -172,11 +180,47 @@ export default async function DashboardPage() {
             )}
           </div>
         </div>
-
         <div className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'>
           <h3 className='text-lg font-semibold text-slate-950'>
             Today&apos;s focus
           </h3>
+
+          <div className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'>
+            <h3 className='text-lg font-semibold text-slate-950'>
+              Recent messages
+            </h3>
+
+            <div className='mt-5 space-y-3'>
+              {!typedMessages.length ? (
+                <p className='rounded-2xl bg-slate-50 px-4 py-4 text-sm text-slate-500'>
+                  No recent messages yet.
+                </p>
+              ) : (
+                typedMessages.map((message) => (
+                  <div
+                    key={message.id}
+                    className='rounded-2xl border border-slate-200 px-4 py-3'
+                  >
+                    <div className='mb-2 flex items-center justify-between gap-3'>
+                      <span className='rounded-full bg-slate-100 px-3 py-1 text-xs font-medium capitalize text-slate-700'>
+                        {message.type}
+                      </span>
+
+                      <span className='text-xs text-slate-400'>
+                        {new Date(message.created_at).toLocaleDateString(
+                          'en-US',
+                        )}
+                      </span>
+                    </div>
+
+                    <p className='line-clamp-2 text-sm text-slate-700'>
+                      {message.message}
+                    </p>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
 
           <div className='mt-5 space-y-3'>
             {!todayFocus.length ? (
