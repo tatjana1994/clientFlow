@@ -18,6 +18,12 @@ type Task = {
   created_at: string;
 };
 
+type Invoice = {
+  id: string;
+  amount: number;
+  status: string;
+};
+
 export default async function DashboardPage() {
   const supabase = await createClient();
 
@@ -30,6 +36,16 @@ export default async function DashboardPage() {
     .from('tasks')
     .select('id, title, status, priority, created_at')
     .order('created_at', { ascending: false });
+
+  const { data: invoices } = await supabase
+    .from('invoices')
+    .select('id, amount, status');
+
+  const typedInvoices = (invoices || []) as Invoice[];
+
+  const pendingAmount = typedInvoices
+    .filter((invoice) => invoice.status !== 'paid')
+    .reduce((sum, invoice) => sum + Number(invoice.amount), 0);
 
   const typedProjects = (projects || []) as Project[];
   const typedTasks = (tasks || []) as Task[];
@@ -67,6 +83,11 @@ export default async function DashboardPage() {
     {
       label: 'Completion rate',
       value: `${completionRate}%`,
+      icon: ReceiptText,
+    },
+    {
+      label: 'Pending invoices',
+      value: `$${pendingAmount.toLocaleString()}`,
       icon: ReceiptText,
     },
     {
