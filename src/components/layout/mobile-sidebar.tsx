@@ -7,6 +7,7 @@ import {
   CheckSquare,
   FolderKanban,
   LayoutDashboard,
+  LineChart,
   Menu,
   MessageSquare,
   ReceiptText,
@@ -18,6 +19,7 @@ const navItems = [
   { label: 'Projects', href: '/projects', icon: FolderKanban },
   { label: 'Tasks', href: '/tasks', icon: CheckSquare },
   { label: 'Invoices', href: '/invoices', icon: ReceiptText },
+  { label: 'Analytics', href: '/analytics', icon: LineChart },
   { label: 'Messages', href: '/messages', icon: MessageSquare },
 ];
 

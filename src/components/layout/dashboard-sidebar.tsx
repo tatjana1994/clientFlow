@@ -4,6 +4,7 @@ import {
   CheckSquare,
   FolderKanban,
   LayoutDashboard,
+  LineChart,
   MessageSquare,
   ReceiptText,
 } from 'lucide-react';
@@ -28,6 +29,11 @@ const navItems = [
     label: 'Invoices',
     href: '/invoices',
     icon: ReceiptText,
+  },
+  {
+    label: 'Analytics',
+    href: '/analytics',
+    icon: LineChart,
   },
   {
     label: 'Messages',
