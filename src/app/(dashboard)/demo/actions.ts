@@ -234,10 +234,43 @@ export async function generateDemoWorkspace() {
     throw new Error(messagesError.message);
   }
 
+  const teamMembers = [
+    {
+      owner_id: userId,
+      full_name: 'Sarah Johnson',
+      email: 'sarah@northstar.demo',
+      role: 'project_manager',
+      status: 'active',
+    },
+    {
+      owner_id: userId,
+      full_name: 'Mia Carter',
+      email: 'mia@northstar.demo',
+      role: 'designer',
+      status: 'active',
+    },
+    {
+      owner_id: userId,
+      full_name: 'Leo Martin',
+      email: 'leo@northstar.demo',
+      role: 'developer',
+      status: 'invited',
+    },
+  ];
+
+  const { error: teamError } = await supabase
+    .from('team_members')
+    .insert(teamMembers);
+
+  if (teamError) {
+    throw new Error(teamError.message);
+  }
+
   revalidatePath('/dashboard');
   revalidatePath('/projects');
   revalidatePath('/tasks');
   revalidatePath('/invoices');
   revalidatePath('/messages');
   revalidatePath('/analytics');
+  revalidatePath('/team');
 }

@@ -11,12 +11,14 @@ import {
   Menu,
   MessageSquare,
   ReceiptText,
+  Users,
   X,
 } from 'lucide-react';
 
 const navItems = [
   { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
   { label: 'Projects', href: '/projects', icon: FolderKanban },
+  { label: 'Team', href: '/team', icon: Users },
   { label: 'Tasks', href: '/tasks', icon: CheckSquare },
   { label: 'Invoices', href: '/invoices', icon: ReceiptText },
   { label: 'Analytics', href: '/analytics', icon: LineChart },
@@ -85,6 +87,15 @@ export function MobileSidebar() {
                 </Link>
               ))}
             </nav>
+            <div className='mt-10 border-t border-slate-200 pt-5'>
+              <Link
+                href='/'
+                onClick={() => setIsOpen(false)}
+                className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-950'
+              >
+                ← Back to website
+              </Link>
+            </div>
           </aside>
         </div>
       )}

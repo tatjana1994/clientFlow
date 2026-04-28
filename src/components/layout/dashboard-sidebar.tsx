@@ -7,6 +7,7 @@ import {
   LineChart,
   MessageSquare,
   ReceiptText,
+  Users,
 } from 'lucide-react';
 
 const navItems = [
@@ -19,6 +20,11 @@ const navItems = [
     label: 'Projects',
     href: '/projects',
     icon: FolderKanban,
+  },
+  {
+    label: 'Team',
+    href: '/team',
+    icon: Users,
   },
   {
     label: 'Tasks',
@@ -68,6 +74,14 @@ export function DashboardSidebar() {
           </Link>
         ))}
       </nav>
+      <div className='mt-10 border-t border-slate-200 pt-5'>
+        <Link
+          href='/'
+          className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-950'
+        >
+          ← Back to website
+        </Link>
+      </div>
     </aside>
   );
 }
