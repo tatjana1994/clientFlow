@@ -117,8 +117,8 @@ export default async function TasksPage({
   return (
     <div className='space-y-8'>
       <div>
-        <h2 className='text-2xl font-semibold text-slate-950'>Tasks</h2>
-        <p className='mt-1 text-sm text-slate-500'>
+        <h2 className='text-2xl font-semibold text-card-foreground'>Tasks</h2>
+        <p className='mt-1 text-sm text-muted'>
           Manage all project tasks across your client workspace.
         </p>
       </div>
@@ -127,28 +127,28 @@ export default async function TasksPage({
         {stats.map((stat) => (
           <div
             key={stat.label}
-            className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'
+            className='rounded-3xl border border-border bg-card p-6 shadow-sm'
           >
             <div className='flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-100 text-slate-700'>
               <stat.icon className='h-5 w-5' />
             </div>
 
-            <p className='mt-5 text-3xl font-semibold text-slate-950'>
+            <p className='mt-5 text-3xl font-semibold text-card-foreground'>
               {stat.value}
             </p>
 
-            <p className='mt-1 text-sm text-slate-500'>{stat.label}</p>
+            <p className='mt-1 text-sm text-muted'>{stat.label}</p>
           </div>
         ))}
       </div>
 
-      <div className='rounded-3xl border border-slate-200 bg-white p-5 shadow-sm'>
+      <div className='rounded-3xl border border-border bg-card p-5 shadow-sm'>
         <div className='flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between'>
           <div>
-            <h3 className='text-lg font-semibold text-slate-950'>
+            <h3 className='text-lg font-semibold text-card-foreground'>
               Task filters
             </h3>
-            <p className='mt-1 text-sm text-slate-500'>
+            <p className='mt-1 text-sm text-muted'>
               Filter tasks by delivery status and priority.
             </p>
           </div>
@@ -212,24 +212,26 @@ export default async function TasksPage({
         </div>
       </div>
 
-      <div className='overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm'>
-        <div className='border-b border-slate-200 px-6 py-4'>
-          <h3 className='text-lg font-semibold text-slate-950'>Task list</h3>
+      <div className='overflow-hidden rounded-3xl border border-border bg-card shadow-sm'>
+        <div className='border-b border-border px-6 py-4'>
+          <h3 className='text-lg font-semibold text-card-foreground'>
+            Task list
+          </h3>
         </div>
 
         {!typedTasks.length ? (
           <div className='p-10 text-center'>
-            <h3 className='text-lg font-semibold text-slate-950'>
+            <h3 className='text-lg font-semibold text-card-foreground'>
               No tasks found
             </h3>
-            <p className='mt-2 text-sm text-slate-500'>
+            <p className='mt-2 text-sm text-muted'>
               Add tasks inside a project or adjust your filters.
             </p>
           </div>
         ) : (
           <div className='overflow-x-auto'>
             <table className='w-full min-w-[860px] text-left'>
-              <thead className='bg-slate-50 text-sm text-slate-500'>
+              <thead className='bg-background text-sm text-muted'>
                 <tr>
                   <th className='px-6 py-4 font-medium'>Task</th>
                   <th className='px-6 py-4 font-medium'>Project</th>
@@ -247,7 +249,7 @@ export default async function TasksPage({
                   return (
                     <tr key={task.id}>
                       <td className='px-6 py-4'>
-                        <p className='text-sm font-medium text-slate-950'>
+                        <p className='text-sm font-medium text-card-foreground'>
                           {task.title}
                         </p>
                         <p className='mt-1 text-xs text-slate-400'>

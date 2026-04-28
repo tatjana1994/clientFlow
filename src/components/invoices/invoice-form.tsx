@@ -4,9 +4,11 @@ export function InvoiceForm() {
   return (
     <form
       action={createInvoice}
-      className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'
+      className='rounded-3xl border border-border bg-card p-6 shadow-sm'
     >
-      <h3 className='text-lg font-semibold text-slate-950'>Add new invoice</h3>
+      <h3 className='text-lg font-semibold text-card-foreground'>
+        Add new invoice
+      </h3>
 
       <div className='mt-5 grid gap-4 md:grid-cols-5'>
         <div>
@@ -15,7 +17,7 @@ export function InvoiceForm() {
             name='clientName'
             required
             placeholder='Northstar Agency'
-            className='mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-950'
+            className='mt-2 w-full rounded-2xl border border-border px-4 py-3 text-sm outline-none focus:border-slate-950'
           />
         </div>
 
@@ -27,7 +29,7 @@ export function InvoiceForm() {
             name='invoiceNumber'
             required
             placeholder='INV-001'
-            className='mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-950'
+            className='mt-2 w-full rounded-2xl border border-border px-4 py-3 text-sm outline-none focus:border-slate-950'
           />
         </div>
 
@@ -40,7 +42,7 @@ export function InvoiceForm() {
             step='0.01'
             required
             placeholder='1200'
-            className='mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-950'
+            className='mt-2 w-full rounded-2xl border border-border px-4 py-3 text-sm outline-none focus:border-slate-950'
           />
         </div>
 
@@ -49,7 +51,7 @@ export function InvoiceForm() {
           <select
             name='status'
             defaultValue='pending'
-            className='mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-950'
+            className='mt-2 w-full rounded-2xl border border-border px-4 py-3 text-sm outline-none focus:border-slate-950'
           >
             <option value='pending'>Pending</option>
             <option value='paid'>Paid</option>
@@ -62,7 +64,7 @@ export function InvoiceForm() {
           <input
             name='dueDate'
             type='date'
-            className='mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-950'
+            className='mt-2 w-full rounded-2xl border border-border px-4 py-3 text-sm outline-none focus:border-slate-950'
           />
         </div>
       </div>

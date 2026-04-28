@@ -85,8 +85,8 @@ export default async function TeamPage() {
   return (
     <div className='space-y-8'>
       <div>
-        <h2 className='text-2xl font-semibold text-slate-950'>Team</h2>
-        <p className='mt-1 text-sm text-slate-500'>
+        <h2 className='text-2xl font-semibold text-card-foreground'>Team</h2>
+        <p className='mt-1 text-sm text-muted'>
           Manage agency members, roles and workspace access.
         </p>
       </div>
@@ -95,36 +95,36 @@ export default async function TeamPage() {
         {stats.map((stat) => (
           <div
             key={stat.label}
-            className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'
+            className='rounded-3xl border border-border bg-card p-6 shadow-sm'
           >
             <div className='flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-100 text-slate-700'>
               <stat.icon className='h-5 w-5' />
             </div>
 
-            <p className='mt-5 text-3xl font-semibold text-slate-950'>
+            <p className='mt-5 text-3xl font-semibold text-card-foreground'>
               {stat.value}
             </p>
 
-            <p className='mt-1 text-sm text-slate-500'>{stat.label}</p>
+            <p className='mt-1 text-sm text-muted'>{stat.label}</p>
           </div>
         ))}
       </div>
 
       <TeamMemberForm />
 
-      <div className='overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm'>
-        <div className='border-b border-slate-200 px-6 py-4'>
-          <h3 className='text-lg font-semibold text-slate-950'>
+      <div className='overflow-hidden rounded-3xl border border-border bg-card shadow-sm'>
+        <div className='border-b border-border px-6 py-4'>
+          <h3 className='text-lg font-semibold text-card-foreground'>
             Workspace members
           </h3>
         </div>
 
         {!typedMembers.length ? (
           <div className='p-10 text-center'>
-            <h3 className='text-lg font-semibold text-slate-950'>
+            <h3 className='text-lg font-semibold text-card-foreground'>
               No team members yet
             </h3>
-            <p className='mt-2 text-sm text-slate-500'>
+            <p className='mt-2 text-sm text-muted'>
               Add your first team member using the form above.
             </p>
           </div>
@@ -141,10 +141,10 @@ export default async function TeamPage() {
                   </div>
 
                   <div className='min-w-0'>
-                    <p className='font-semibold text-slate-950'>
+                    <p className='font-semibold text-card-foreground'>
                       {member.full_name}
                     </p>
-                    <p className='mt-1 truncate text-sm text-slate-500'>
+                    <p className='mt-1 truncate text-sm text-muted'>
                       {member.email}
                     </p>
                   </div>

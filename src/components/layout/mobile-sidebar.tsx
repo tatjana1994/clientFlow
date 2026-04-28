@@ -32,7 +32,7 @@ export function MobileSidebar() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className='inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 lg:hidden'
+        className='inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-card text-slate-700 lg:hidden'
         aria-label='Open menu'
       >
         <Menu className='h-5 w-5' />
@@ -46,7 +46,7 @@ export function MobileSidebar() {
             aria-label='Close menu overlay'
           />
 
-          <aside className='relative h-full w-[82%] max-w-xs bg-white px-5 py-6 shadow-2xl'>
+          <aside className='relative h-full w-[82%] max-w-xs bg-card px-5 py-6 shadow-2xl'>
             <div className='flex items-center justify-between'>
               <Link
                 href='/dashboard'
@@ -58,16 +58,16 @@ export function MobileSidebar() {
                 </div>
 
                 <div>
-                  <p className='text-base font-semibold text-slate-950'>
+                  <p className='text-base font-semibold text-card-foreground'>
                     ClientFlow
                   </p>
-                  <p className='text-xs text-slate-500'>Agency Portal</p>
+                  <p className='text-xs text-muted'>Agency Portal</p>
                 </div>
               </Link>
 
               <button
                 onClick={() => setIsOpen(false)}
-                className='rounded-xl border border-slate-200 p-2 text-slate-600'
+                className='rounded-xl border border-border p-2 text-slate-600'
                 aria-label='Close menu'
               >
                 <X className='h-4 w-4' />
@@ -80,18 +80,18 @@ export function MobileSidebar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-950'
+                  className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-card-foreground'
                 >
                   <item.icon className='h-4 w-4' />
                   {item.label}
                 </Link>
               ))}
             </nav>
-            <div className='mt-10 border-t border-slate-200 pt-5'>
+            <div className='mt-10 border-t border-border pt-5'>
               <Link
                 href='/'
                 onClick={() => setIsOpen(false)}
-                className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-950'
+                className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-muted transition hover:bg-slate-100 hover:text-card-foreground'
               >
                 ← Back to website
               </Link>

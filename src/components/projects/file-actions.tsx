@@ -12,7 +12,7 @@ export function FileActions({ fileId, filePath }: FileActionsProps) {
   return (
     <button
       onClick={() => deleteProjectFile(fileId, filePath)}
-      className='rounded-xl border border-slate-200 p-1.5 text-slate-500 transition hover:bg-red-50 hover:text-red-600'
+      className='rounded-xl border border-border p-1.5 text-muted transition hover:bg-red-50 hover:text-red-600'
       aria-label='Delete file'
     >
       <Trash2 className='h-3.5 w-3.5' />

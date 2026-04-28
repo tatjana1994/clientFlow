@@ -68,8 +68,10 @@ export default async function ProjectsPage() {
   return (
     <div className='space-y-8'>
       <div>
-        <h2 className='text-2xl font-semibold text-slate-950'>Projects</h2>
-        <p className='mt-1 text-sm text-slate-500'>
+        <h2 className='text-2xl font-semibold text-card-foreground'>
+          Projects
+        </h2>
+        <p className='mt-1 text-sm text-muted'>
           Create projects, manage client work and track related tasks.
         </p>
       </div>
@@ -77,11 +79,11 @@ export default async function ProjectsPage() {
       <ProjectForm />
 
       {!typedProjects.length ? (
-        <div className='rounded-3xl border border-dashed border-slate-300 bg-white p-10 text-center'>
-          <h3 className='text-lg font-semibold text-slate-950'>
+        <div className='rounded-3xl border border-dashed border-slate-300 bg-card p-10 text-center'>
+          <h3 className='text-lg font-semibold text-card-foreground'>
             No projects yet
           </h3>
-          <p className='mt-2 text-sm text-slate-500'>
+          <p className='mt-2 text-sm text-muted'>
             Create your first project using the form above.
           </p>
         </div>
@@ -100,14 +102,14 @@ export default async function ProjectsPage() {
             return (
               <div
                 key={project.id}
-                className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'
+                className='rounded-3xl border border-border bg-card p-6 shadow-sm'
               >
                 <div className='flex items-start justify-between gap-4'>
                   <div>
-                    <h3 className='text-lg font-semibold text-slate-950'>
+                    <h3 className='text-lg font-semibold text-card-foreground'>
                       {project.name}
                     </h3>
-                    <p className='mt-1 text-sm text-slate-500'>
+                    <p className='mt-1 text-sm text-muted'>
                       {project.client_name}
                     </p>
                   </div>
@@ -123,7 +125,7 @@ export default async function ProjectsPage() {
 
                 <div className='mt-6'>
                   <div className='mb-2 flex justify-between text-sm'>
-                    <span className='text-slate-500'>Progress</span>
+                    <span className='text-muted'>Progress</span>
                     <span className='font-medium text-slate-900'>
                       {progress}%
                     </span>
@@ -138,7 +140,7 @@ export default async function ProjectsPage() {
                 </div>
 
                 {project.due_date && (
-                  <p className='mt-5 text-sm text-slate-500'>
+                  <p className='mt-5 text-sm text-muted'>
                     Due date:{' '}
                     <span className='font-medium text-slate-900'>
                       {project.due_date}
@@ -148,11 +150,11 @@ export default async function ProjectsPage() {
 
                 <div className='mt-6 border-t border-slate-100 pt-5'>
                   <div className='flex items-center justify-between'>
-                    <h4 className='text-sm font-semibold text-slate-950'>
+                    <h4 className='text-sm font-semibold text-card-foreground'>
                       Tasks
                     </h4>
 
-                    <span className='text-xs text-slate-500'>
+                    <span className='text-xs text-muted'>
                       {doneTasks}/{totalTasks} completed
                     </span>
                   </div>
@@ -161,21 +163,21 @@ export default async function ProjectsPage() {
 
                   <div className='mt-4 space-y-3'>
                     {!project.tasks.length ? (
-                      <p className='rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-500'>
+                      <p className='rounded-2xl bg-background px-4 py-3 text-sm text-muted'>
                         No tasks yet.
                       </p>
                     ) : (
                       project.tasks.map((task) => (
                         <div
                           key={task.id}
-                          className='flex items-center justify-between gap-3 rounded-2xl border border-slate-100 bg-slate-50 px-4 py-3'
+                          className='flex items-center justify-between gap-3 rounded-2xl border border-slate-100 bg-background px-4 py-3'
                         >
                           <div>
                             <p className='text-sm font-medium text-slate-900'>
                               {task.title}
                             </p>
 
-                            <p className='mt-1 text-xs capitalize text-slate-500'>
+                            <p className='mt-1 text-xs capitalize text-muted'>
                               Priority: {task.priority.replace('_', ' ')}
                             </p>
                           </div>
@@ -188,11 +190,11 @@ export default async function ProjectsPage() {
                 </div>
                 <div className='mt-6 border-t border-slate-100 pt-5'>
                   <div className='flex items-center justify-between'>
-                    <h4 className='text-sm font-semibold text-slate-950'>
+                    <h4 className='text-sm font-semibold text-card-foreground'>
                       Documents
                     </h4>
 
-                    <span className='text-xs text-slate-500'>
+                    <span className='text-xs text-muted'>
                       {project.project_files.length} files
                     </span>
                   </div>
@@ -201,17 +203,17 @@ export default async function ProjectsPage() {
 
                   <div className='mt-4 space-y-3'>
                     {!project.project_files.length ? (
-                      <p className='rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-500'>
+                      <p className='rounded-2xl bg-background px-4 py-3 text-sm text-muted'>
                         No documents uploaded yet.
                       </p>
                     ) : (
                       project.project_files.map((file) => (
                         <div
                           key={file.id}
-                          className='flex items-center justify-between gap-3 rounded-2xl border border-slate-100 bg-slate-50 px-4 py-3'
+                          className='flex items-center justify-between gap-3 rounded-2xl border border-slate-100 bg-background px-4 py-3'
                         >
                           <div className='flex min-w-0 items-center gap-3'>
-                            <div className='flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white text-slate-600'>
+                            <div className='flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-card text-slate-600'>
                               <FileText className='h-4 w-4' />
                             </div>
 
@@ -220,7 +222,7 @@ export default async function ProjectsPage() {
                                 {file.file_name}
                               </p>
 
-                              <p className='text-xs text-slate-500'>
+                              <p className='text-xs text-muted'>
                                 {file.file_size
                                   ? `${Math.round(file.file_size / 1024)} KB`
                                   : 'Unknown size'}

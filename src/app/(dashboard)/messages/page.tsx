@@ -61,8 +61,10 @@ export default async function MessagesPage() {
   return (
     <div className='space-y-8'>
       <div>
-        <h2 className='text-2xl font-semibold text-slate-950'>Messages</h2>
-        <p className='mt-1 text-sm text-slate-500'>
+        <h2 className='text-2xl font-semibold text-card-foreground'>
+          Messages
+        </h2>
+        <p className='mt-1 text-sm text-muted'>
           Keep project communication and internal notes in one place.
         </p>
       </div>
@@ -75,19 +77,19 @@ export default async function MessagesPage() {
 
       <MessageForm projects={typedProjects} />
 
-      <div className='rounded-3xl border border-slate-200 bg-white shadow-sm'>
-        <div className='border-b border-slate-200 px-6 py-4'>
-          <h3 className='text-lg font-semibold text-slate-950'>
+      <div className='rounded-3xl border border-border bg-card shadow-sm'>
+        <div className='border-b border-border px-6 py-4'>
+          <h3 className='text-lg font-semibold text-card-foreground'>
             Message history
           </h3>
         </div>
 
         {!typedMessages.length ? (
           <div className='p-10 text-center'>
-            <h3 className='text-lg font-semibold text-slate-950'>
+            <h3 className='text-lg font-semibold text-card-foreground'>
               No messages yet
             </h3>
-            <p className='mt-2 text-sm text-slate-500'>
+            <p className='mt-2 text-sm text-muted'>
               Add your first project note using the form above.
             </p>
           </div>
@@ -113,11 +115,11 @@ export default async function MessagesPage() {
                       </span>
                     </div>
 
-                    <h4 className='mt-3 font-semibold text-slate-950'>
+                    <h4 className='mt-3 font-semibold text-card-foreground'>
                       {item.projects?.[0]?.name || 'Unknown project'}{' '}
                     </h4>
 
-                    <p className='mt-1 text-sm text-slate-500'>
+                    <p className='mt-1 text-sm text-muted'>
                       {item.projects?.[0]?.client_name || 'No client'} · by{' '}
                       {item.author_name}
                     </p>

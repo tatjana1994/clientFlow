@@ -16,13 +16,13 @@ export function TaskForm({ projectId }: TaskFormProps) {
         name='title'
         required
         placeholder='Add task...'
-        className='min-w-0 rounded-2xl border border-slate-200 px-4 py-2.5 text-sm outline-none transition focus:border-slate-950'
+        className='min-w-0 rounded-2xl border border-border px-4 py-2.5 text-sm outline-none transition focus:border-slate-950'
       />
 
       <select
         name='priority'
         defaultValue='medium'
-        className='rounded-2xl border border-slate-200 px-3 py-2.5 text-sm outline-none'
+        className='rounded-2xl border border-border px-3 py-2.5 text-sm outline-none'
       >
         <option value='low'>Low</option>
         <option value='medium'>Medium</option>

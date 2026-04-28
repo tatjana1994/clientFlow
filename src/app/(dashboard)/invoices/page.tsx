@@ -51,30 +51,32 @@ export default async function InvoicesPage() {
   return (
     <div className='space-y-8'>
       <div>
-        <h2 className='text-2xl font-semibold text-slate-950'>Invoices</h2>
-        <p className='mt-1 text-sm text-slate-500'>
+        <h2 className='text-2xl font-semibold text-card-foreground'>
+          Invoices
+        </h2>
+        <p className='mt-1 text-sm text-muted'>
           Create invoices, track payments and monitor client billing.
         </p>
       </div>
 
       <div className='grid gap-5 md:grid-cols-3'>
-        <div className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'>
-          <p className='text-sm text-slate-500'>Total invoices</p>
-          <p className='mt-3 text-3xl font-semibold text-slate-950'>
+        <div className='rounded-3xl border border-border bg-card p-6 shadow-sm'>
+          <p className='text-sm text-muted'>Total invoices</p>
+          <p className='mt-3 text-3xl font-semibold text-card-foreground'>
             {typedInvoices.length}
           </p>
         </div>
 
-        <div className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'>
-          <p className='text-sm text-slate-500'>Pending amount</p>
-          <p className='mt-3 text-3xl font-semibold text-slate-950'>
+        <div className='rounded-3xl border border-border bg-card p-6 shadow-sm'>
+          <p className='text-sm text-muted'>Pending amount</p>
+          <p className='mt-3 text-3xl font-semibold text-card-foreground'>
             {formatCurrency(totalPending)}
           </p>
         </div>
 
-        <div className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'>
-          <p className='text-sm text-slate-500'>Paid amount</p>
-          <p className='mt-3 text-3xl font-semibold text-slate-950'>
+        <div className='rounded-3xl border border-border bg-card p-6 shadow-sm'>
+          <p className='text-sm text-muted'>Paid amount</p>
+          <p className='mt-3 text-3xl font-semibold text-card-foreground'>
             {formatCurrency(totalPaid)}
           </p>
         </div>
@@ -82,24 +84,26 @@ export default async function InvoicesPage() {
 
       <InvoiceForm />
 
-      <div className='overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm'>
-        <div className='border-b border-slate-200 px-6 py-4'>
-          <h3 className='text-lg font-semibold text-slate-950'>Invoice list</h3>
+      <div className='overflow-hidden rounded-3xl border border-border bg-card shadow-sm'>
+        <div className='border-b border-border px-6 py-4'>
+          <h3 className='text-lg font-semibold text-card-foreground'>
+            Invoice list
+          </h3>
         </div>
 
         {!typedInvoices.length ? (
           <div className='p-10 text-center'>
-            <h3 className='text-lg font-semibold text-slate-950'>
+            <h3 className='text-lg font-semibold text-card-foreground'>
               No invoices yet
             </h3>
-            <p className='mt-2 text-sm text-slate-500'>
+            <p className='mt-2 text-sm text-muted'>
               Create your first invoice using the form above.
             </p>
           </div>
         ) : (
           <div className='overflow-x-auto'>
             <table className='w-full min-w-[760px] text-left'>
-              <thead className='bg-slate-50 text-sm text-slate-500'>
+              <thead className='bg-background text-sm text-muted'>
                 <tr>
                   <th className='px-6 py-4 font-medium'>Invoice</th>
                   <th className='px-6 py-4 font-medium'>Client</th>
@@ -113,7 +117,7 @@ export default async function InvoicesPage() {
               <tbody className='divide-y divide-slate-100'>
                 {typedInvoices.map((invoice) => (
                   <tr key={invoice.id}>
-                    <td className='px-6 py-4 text-sm font-medium text-slate-950'>
+                    <td className='px-6 py-4 text-sm font-medium text-card-foreground'>
                       {invoice.invoice_number}
                     </td>
 
@@ -121,7 +125,7 @@ export default async function InvoicesPage() {
                       {invoice.client_name}
                     </td>
 
-                    <td className='px-6 py-4 text-sm font-medium text-slate-950'>
+                    <td className='px-6 py-4 text-sm font-medium text-card-foreground'>
                       {formatCurrency(Number(invoice.amount))}
                     </td>
 

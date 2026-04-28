@@ -22,7 +22,7 @@ export function TeamMemberActions({
         onChange={(event) =>
           updateTeamMemberStatus(memberId, event.target.value)
         }
-        className='rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs outline-none'
+        className='rounded-xl border border-border bg-card px-3 py-2 text-xs outline-none'
       >
         <option value='active'>Active</option>
         <option value='invited'>Invited</option>
@@ -31,7 +31,7 @@ export function TeamMemberActions({
 
       <button
         onClick={() => deleteTeamMember(memberId)}
-        className='rounded-xl border border-slate-200 p-2 text-slate-500 transition hover:bg-red-50 hover:text-red-600'
+        className='rounded-xl border border-border p-2 text-muted transition hover:bg-red-50 hover:text-red-600'
         aria-label='Delete team member'
       >
         <Trash2 className='h-4 w-4' />

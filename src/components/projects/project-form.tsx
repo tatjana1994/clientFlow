@@ -4,9 +4,11 @@ export function ProjectForm() {
   return (
     <form
       action={createProject}
-      className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'
+      className='rounded-3xl border border-border bg-card p-6 shadow-sm'
     >
-      <h3 className='text-lg font-semibold text-slate-950'>Add new project</h3>
+      <h3 className='text-lg font-semibold text-card-foreground'>
+        Add new project
+      </h3>
 
       <div className='mt-5 grid gap-4 md:grid-cols-3'>
         <div>
@@ -17,7 +19,7 @@ export function ProjectForm() {
             name='name'
             required
             placeholder='Website redesign'
-            className='mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-slate-950'
+            className='mt-2 w-full rounded-2xl border border-border px-4 py-3 text-sm outline-none transition focus:border-slate-950'
           />
         </div>
 
@@ -29,7 +31,7 @@ export function ProjectForm() {
             name='clientName'
             required
             placeholder='Northstar Agency'
-            className='mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-slate-950'
+            className='mt-2 w-full rounded-2xl border border-border px-4 py-3 text-sm outline-none transition focus:border-slate-950'
           />
         </div>
 
@@ -38,7 +40,7 @@ export function ProjectForm() {
           <input
             name='dueDate'
             type='date'
-            className='mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-slate-950'
+            className='mt-2 w-full rounded-2xl border border-border px-4 py-3 text-sm outline-none transition focus:border-slate-950'
           />
         </div>
       </div>

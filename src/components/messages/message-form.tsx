@@ -14,9 +14,11 @@ export function MessageForm({ projects }: MessageFormProps) {
   return (
     <form
       action={createMessage}
-      className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'
+      className='rounded-3xl border border-border bg-card p-6 shadow-sm'
     >
-      <h3 className='text-lg font-semibold text-slate-950'>Add new message</h3>
+      <h3 className='text-lg font-semibold text-card-foreground'>
+        Add new message
+      </h3>
 
       <div className='mt-5 grid gap-4 md:grid-cols-2'>
         <div>
@@ -25,7 +27,7 @@ export function MessageForm({ projects }: MessageFormProps) {
           <select
             name='projectId'
             required
-            className='mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-950'
+            className='mt-2 w-full rounded-2xl border border-border px-4 py-3 text-sm outline-none focus:border-slate-950'
             defaultValue=''
           >
             <option value='' disabled>
@@ -48,7 +50,7 @@ export function MessageForm({ projects }: MessageFormProps) {
           <select
             name='type'
             defaultValue='client'
-            className='mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-950'
+            className='mt-2 w-full rounded-2xl border border-border px-4 py-3 text-sm outline-none focus:border-slate-950'
           >
             <option value='client'>Client note</option>
             <option value='internal'>Internal note</option>
@@ -64,7 +66,7 @@ export function MessageForm({ projects }: MessageFormProps) {
           required
           rows={4}
           placeholder='Write a project update, client note or internal reminder...'
-          className='mt-2 w-full resize-none rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-950'
+          className='mt-2 w-full resize-none rounded-2xl border border-border px-4 py-3 text-sm outline-none focus:border-slate-950'
         />
       </div>
 

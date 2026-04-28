@@ -176,8 +176,10 @@ export default async function AnalyticsPage() {
   return (
     <div className='space-y-8'>
       <div>
-        <h2 className='text-2xl font-semibold text-slate-950'>Analytics</h2>
-        <p className='mt-1 text-sm text-slate-500'>
+        <h2 className='text-2xl font-semibold text-card-foreground'>
+          Analytics
+        </h2>
+        <p className='mt-1 text-sm text-muted'>
           Track project health, billing performance and task progress.
         </p>
       </div>
@@ -186,17 +188,17 @@ export default async function AnalyticsPage() {
         {overviewCards.map((card) => (
           <div
             key={card.label}
-            className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'
+            className='rounded-3xl border border-border bg-card p-6 shadow-sm'
           >
             <div className='flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-100 text-slate-700'>
               <card.icon className='h-5 w-5' />
             </div>
 
-            <p className='mt-5 text-3xl font-semibold text-slate-950'>
+            <p className='mt-5 text-3xl font-semibold text-card-foreground'>
               {card.value}
             </p>
 
-            <p className='mt-1 text-sm text-slate-500'>{card.label}</p>
+            <p className='mt-1 text-sm text-muted'>{card.label}</p>
           </div>
         ))}
       </div>

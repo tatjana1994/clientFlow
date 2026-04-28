@@ -38,7 +38,7 @@ export default function LoginForm() {
 
   return (
     <main className='flex min-h-screen items-center justify-center bg-[#0B0F19] px-6 text-white'>
-      <div className='w-full max-w-md rounded-3xl border border-white/10 bg-white/[0.04] p-8 shadow-2xl backdrop-blur'>
+      <div className='w-full max-w-md rounded-3xl border border-white/10 bg-card/[0.04] p-8 shadow-2xl backdrop-blur'>
         <Link href='/' className='text-sm text-white/60 hover:text-white'>
           ← Back to home
         </Link>
@@ -57,7 +57,7 @@ export default function LoginForm() {
               type='email'
               required
               placeholder='you@example.com'
-              className='mt-2 w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none transition placeholder:text-white/30 focus:border-sky-400'
+              className='mt-2 w-full rounded-2xl border border-white/10 bg-card/5 px-4 py-3 text-sm outline-none transition placeholder:text-white/30 focus:border-sky-400'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -71,7 +71,7 @@ export default function LoginForm() {
               type='password'
               required
               placeholder='••••••••'
-              className='mt-2 w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none transition placeholder:text-white/30 focus:border-sky-400'
+              className='mt-2 w-full rounded-2xl border border-white/10 bg-card/5 px-4 py-3 text-sm outline-none transition placeholder:text-white/30 focus:border-sky-400'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -86,7 +86,7 @@ export default function LoginForm() {
           <button
             type='submit'
             disabled={isLoading}
-            className='w-full rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-[#0B0F19] transition hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-60'
+            className='w-full rounded-2xl bg-card px-5 py-3 text-sm font-semibold text-[#0B0F19] transition hover:bg-card/90 disabled:cursor-not-allowed disabled:opacity-60'
           >
             {isLoading ? 'Logging in...' : 'Log in'}
           </button>

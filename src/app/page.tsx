@@ -64,7 +64,7 @@ export default function HomePage() {
       <header className='sticky top-0 z-50 border-b border-white/10 bg-[#070A12]/80 backdrop-blur-xl'>
         <div className='mx-auto flex max-w-7xl items-center justify-between px-6 py-5'>
           <Link href='/' className='flex items-center gap-3'>
-            <div className='flex h-10 w-10 items-center justify-center rounded-2xl bg-white text-[#070A12]'>
+            <div className='flex h-10 w-10 items-center justify-center rounded-2xl bg-card text-[#070A12]'>
               <Sparkles className='h-5 w-5' />
             </div>
 
@@ -96,7 +96,7 @@ export default function HomePage() {
 
             <Link
               href='/register'
-              className='inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#070A12] transition hover:bg-white/90'
+              className='inline-flex items-center gap-2 rounded-full bg-card px-5 py-2.5 text-sm font-semibold text-[#070A12] transition hover:bg-card/90'
             >
               Open demo
               <ArrowRight className='h-4 w-4' />
@@ -111,7 +111,7 @@ export default function HomePage() {
 
         <div className='relative mx-auto max-w-7xl'>
           <div className='mx-auto max-w-4xl text-center'>
-            <div className='inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70 shadow-2xl backdrop-blur'>
+            <div className='inline-flex items-center gap-2 rounded-full border border-white/10 bg-card/5 px-4 py-2 text-sm text-white/70 shadow-2xl backdrop-blur'>
               <Lock className='h-4 w-4' />
               Modern client portal built with Next.js and Supabase
             </div>
@@ -128,7 +128,7 @@ export default function HomePage() {
             <div className='mt-10 flex flex-col justify-center gap-4 sm:flex-row'>
               <Link
                 href='/register'
-                className='inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-semibold text-[#070A12] transition hover:bg-white/90'
+                className='inline-flex items-center justify-center gap-2 rounded-full bg-card px-7 py-4 text-sm font-semibold text-[#070A12] transition hover:bg-card/90'
               >
                 Try live demo
                 <ArrowRight className='h-4 w-4' />
@@ -136,7 +136,7 @@ export default function HomePage() {
 
               <a
                 href='#dashboard'
-                className='inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-4 text-sm font-semibold text-white transition hover:bg-white/10'
+                className='inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-4 text-sm font-semibold text-white transition hover:bg-card/10'
               >
                 View dashboard preview
               </a>
@@ -144,7 +144,7 @@ export default function HomePage() {
           </div>
 
           <div id='dashboard' className='mx-auto mt-20 max-w-6xl'>
-            <div className='rounded-[2rem] border border-white/10 bg-white/[0.04] p-3 shadow-2xl backdrop-blur'>
+            <div className='rounded-[2rem] border border-white/10 bg-card/[0.04] p-3 shadow-2xl backdrop-blur'>
               <div className='rounded-[1.5rem] border border-white/10 bg-[#0D1220] p-5'>
                 <div className='flex items-center justify-between border-b border-white/10 pb-5'>
                   <div>
@@ -163,7 +163,7 @@ export default function HomePage() {
                   {stats.map((stat) => (
                     <div
                       key={stat.label}
-                      className='rounded-3xl border border-white/10 bg-white/[0.04] p-5'
+                      className='rounded-3xl border border-white/10 bg-card/[0.04] p-5'
                     >
                       <p className='text-sm text-white/45'>{stat.label}</p>
                       <p className='mt-3 text-3xl font-semibold'>
@@ -174,7 +174,7 @@ export default function HomePage() {
                 </div>
 
                 <div className='mt-5 grid gap-4 lg:grid-cols-[1.2fr_0.8fr]'>
-                  <div className='rounded-3xl border border-white/10 bg-white/[0.04] p-5'>
+                  <div className='rounded-3xl border border-white/10 bg-card/[0.04] p-5'>
                     <div className='flex items-center justify-between'>
                       <h3 className='font-semibold'>Recent projects</h3>
                       <span className='text-xs text-white/40'>4 active</span>
@@ -188,7 +188,7 @@ export default function HomePage() {
                       ].map(([project, client, progress]) => (
                         <div
                           key={project}
-                          className='rounded-2xl bg-white/[0.04] p-4'
+                          className='rounded-2xl bg-card/[0.04] p-4'
                         >
                           <div className='flex items-center justify-between'>
                             <div>
@@ -198,7 +198,7 @@ export default function HomePage() {
                               </p>
                             </div>
 
-                            <span className='rounded-full bg-white/10 px-3 py-1 text-xs'>
+                            <span className='rounded-full bg-card/10 px-3 py-1 text-xs'>
                               {progress}
                             </span>
                           </div>
@@ -207,7 +207,7 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div className='rounded-3xl border border-white/10 bg-white/[0.04] p-5'>
+                  <div className='rounded-3xl border border-white/10 bg-card/[0.04] p-5'>
                     <h3 className='font-semibold'>Today&apos;s focus</h3>
 
                     <div className='mt-5 space-y-3'>
@@ -218,7 +218,7 @@ export default function HomePage() {
                       ].map((task) => (
                         <div
                           key={task}
-                          className='flex items-center gap-3 rounded-2xl bg-white/[0.04] p-4'
+                          className='flex items-center gap-3 rounded-2xl bg-card/[0.04] p-4'
                         >
                           <div className='h-2.5 w-2.5 rounded-full bg-sky-300' />
                           <p className='text-sm text-white/75'>{task}</p>
@@ -252,9 +252,9 @@ export default function HomePage() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className='rounded-3xl border border-white/10 bg-white/[0.04] p-6 transition hover:bg-white/[0.07]'
+                className='rounded-3xl border border-white/10 bg-card/[0.04] p-6 transition hover:bg-card/[0.07]'
               >
-                <div className='flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-[#070A12]'>
+                <div className='flex h-12 w-12 items-center justify-center rounded-2xl bg-card text-[#070A12]'>
                   <feature.icon className='h-5 w-5' />
                 </div>
 
@@ -270,7 +270,7 @@ export default function HomePage() {
 
       <section id='tech' className='px-6 pb-24'>
         <div className='mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.8fr_1.2fr]'>
-          <div className='rounded-3xl border border-white/10 bg-white/[0.04] p-8'>
+          <div className='rounded-3xl border border-white/10 bg-card/[0.04] p-8'>
             <Users className='h-8 w-8 text-sky-300' />
             <h2 className='mt-6 text-3xl font-semibold'>
               Built for portfolio impact.
@@ -308,7 +308,7 @@ export default function HomePage() {
             ].map(([title, description]) => (
               <div
                 key={title}
-                className='rounded-3xl border border-white/10 bg-white/[0.04] p-6'
+                className='rounded-3xl border border-white/10 bg-card/[0.04] p-6'
               >
                 <FileText className='h-5 w-5 text-white/70' />
                 <h3 className='mt-4 font-semibold'>{title}</h3>
@@ -322,7 +322,7 @@ export default function HomePage() {
       </section>
 
       <section className='px-6 pb-16'>
-        <div className='mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-white p-8 text-[#070A12] sm:p-10'>
+        <div className='mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-card p-8 text-[#070A12] sm:p-10'>
           <div className='flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between'>
             <div>
               <h2 className='text-3xl font-semibold'>

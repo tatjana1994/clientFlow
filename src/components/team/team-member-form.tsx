@@ -4,9 +4,11 @@ export function TeamMemberForm() {
   return (
     <form
       action={createTeamMember}
-      className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'
+      className='rounded-3xl border border-border bg-card p-6 shadow-sm'
     >
-      <h3 className='text-lg font-semibold text-slate-950'>Add team member</h3>
+      <h3 className='text-lg font-semibold text-card-foreground'>
+        Add team member
+      </h3>
 
       <div className='mt-5 grid gap-4 md:grid-cols-4'>
         <div>
@@ -17,7 +19,7 @@ export function TeamMemberForm() {
             name='fullName'
             required
             placeholder='Sarah Johnson'
-            className='mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-950'
+            className='mt-2 w-full rounded-2xl border border-border px-4 py-3 text-sm outline-none focus:border-slate-950'
           />
         </div>
 
@@ -28,7 +30,7 @@ export function TeamMemberForm() {
             type='email'
             required
             placeholder='sarah@agency.com'
-            className='mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-950'
+            className='mt-2 w-full rounded-2xl border border-border px-4 py-3 text-sm outline-none focus:border-slate-950'
           />
         </div>
 
@@ -37,7 +39,7 @@ export function TeamMemberForm() {
           <select
             name='role'
             defaultValue='designer'
-            className='mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-950'
+            className='mt-2 w-full rounded-2xl border border-border px-4 py-3 text-sm outline-none focus:border-slate-950'
           >
             <option value='owner'>Owner</option>
             <option value='project_manager'>Project Manager</option>
@@ -52,7 +54,7 @@ export function TeamMemberForm() {
           <select
             name='status'
             defaultValue='active'
-            className='mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-950'
+            className='mt-2 w-full rounded-2xl border border-border px-4 py-3 text-sm outline-none focus:border-slate-950'
           >
             <option value='active'>Active</option>
             <option value='invited'>Invited</option>

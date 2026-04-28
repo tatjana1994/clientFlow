@@ -43,12 +43,12 @@ export function AnalyticsCharts({
 }: AnalyticsChartsProps) {
   return (
     <div className='grid gap-5 xl:grid-cols-2'>
-      <div className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'>
+      <div className='rounded-3xl border border-border bg-card p-6 shadow-sm'>
         <div>
-          <h3 className='text-lg font-semibold text-slate-950'>
+          <h3 className='text-lg font-semibold text-card-foreground'>
             Project status
           </h3>
-          <p className='mt-1 text-sm text-slate-500'>
+          <p className='mt-1 text-sm text-muted'>
             Distribution of projects by current status.
           </p>
         </div>
@@ -77,12 +77,12 @@ export function AnalyticsCharts({
         </div>
       </div>
 
-      <div className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'>
+      <div className='rounded-3xl border border-border bg-card p-6 shadow-sm'>
         <div>
-          <h3 className='text-lg font-semibold text-slate-950'>
+          <h3 className='text-lg font-semibold text-card-foreground'>
             Invoice status
           </h3>
-          <p className='mt-1 text-sm text-slate-500'>
+          <p className='mt-1 text-sm text-muted'>
             Paid, pending and overdue invoice count.
           </p>
         </div>
@@ -107,12 +107,12 @@ export function AnalyticsCharts({
         </div>
       </div>
 
-      <div className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'>
+      <div className='rounded-3xl border border-border bg-card p-6 shadow-sm'>
         <div>
-          <h3 className='text-lg font-semibold text-slate-950'>
+          <h3 className='text-lg font-semibold text-card-foreground'>
             Task completion
           </h3>
-          <p className='mt-1 text-sm text-slate-500'>
+          <p className='mt-1 text-sm text-muted'>
             Breakdown of tasks by delivery status.
           </p>
         </div>
@@ -137,21 +137,21 @@ export function AnalyticsCharts({
         </div>
       </div>
 
-      <div className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'>
-        <h3 className='text-lg font-semibold text-slate-950'>
+      <div className='rounded-3xl border border-border bg-card p-6 shadow-sm'>
+        <h3 className='text-lg font-semibold text-card-foreground'>
           Recent activity
         </h3>
 
-        <div className='mt-5 rounded-2xl bg-slate-50 p-4'>
-          <p className='text-sm text-slate-500'>Pending revenue</p>
-          <p className='mt-2 text-3xl font-semibold text-slate-950'>
+        <div className='mt-5 rounded-2xl bg-background p-4'>
+          <p className='text-sm text-muted'>Pending revenue</p>
+          <p className='mt-2 text-3xl font-semibold text-card-foreground'>
             ${pendingRevenue.toLocaleString()}
           </p>
         </div>
 
         <div className='mt-5 space-y-3'>
           {!recentActivity.length ? (
-            <p className='rounded-2xl border border-dashed border-slate-200 px-4 py-6 text-center text-sm text-slate-500'>
+            <p className='rounded-2xl border border-dashed border-border px-4 py-6 text-center text-sm text-muted'>
               No recent activity yet.
             </p>
           ) : (
