@@ -27,6 +27,12 @@ type Invoice = {
   created_at: string;
 };
 
+type Message = {
+  id: string;
+  type: string;
+  created_at: string;
+};
+
 export default async function AnalyticsPage() {
   const supabase = await createClient();
 
@@ -42,9 +48,14 @@ export default async function AnalyticsPage() {
     .from('invoices')
     .select('id, amount, status, created_at');
 
+  const { data: messages } = await supabase
+    .from('messages')
+    .select('id, type, created_at');
+
   const typedProjects = (projects || []) as Project[];
   const typedTasks = (tasks || []) as Task[];
   const typedInvoices = (invoices || []) as Invoice[];
+  const typedMessages = (messages || []) as Message[];
 
   const completedTasks = typedTasks.filter(
     (task) => task.status === 'done',
@@ -151,6 +162,11 @@ export default async function AnalyticsPage() {
     ...typedInvoices.map((item) => ({
       type: 'Invoice',
       label: `Invoice marked as ${item.status}`,
+      date: item.created_at,
+    })),
+    ...typedMessages.map((item) => ({
+      type: 'Message',
+      label: `${item.type === 'internal' ? 'Internal note' : 'Client note'} added`,
       date: item.created_at,
     })),
   ]

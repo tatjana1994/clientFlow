@@ -41,6 +41,12 @@ export default async function DashboardPage() {
     .from('invoices')
     .select('id, amount, status');
 
+  const { data: messages } = await supabase
+    .from('messages')
+    .select('id, message, type, created_at')
+    .order('created_at', { ascending: false })
+    .limit(3);
+
   const typedInvoices = (invoices || []) as Invoice[];
 
   const pendingAmount = typedInvoices
