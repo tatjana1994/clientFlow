@@ -1,3 +1,4 @@
+import { GenerateDemoButton } from '@/src/components/demo/generate-demo-button';
 import { createClient } from '@/src/lib/supabase/server';
 import { CheckCircle2, Clock3, FolderKanban, ReceiptText } from 'lucide-react';
 
@@ -116,6 +117,8 @@ export default async function DashboardPage() {
           Live project and task metrics from Supabase.
         </p>
       </div>
+
+      <GenerateDemoButton />
 
       <div className='grid gap-5 md:grid-cols-2 xl:grid-cols-4'>
         {stats.map((stat) => (
