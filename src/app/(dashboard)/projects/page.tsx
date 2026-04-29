@@ -126,7 +126,7 @@ export default async function ProjectsPage() {
                 <div className='mt-6'>
                   <div className='mb-2 flex justify-between text-sm'>
                     <span className='text-muted'>Progress</span>
-                    <span className='font-medium text-slate-900'>
+                    <span className='font-medium text-card-foreground'>
                       {progress}%
                     </span>
                   </div>
@@ -142,7 +142,7 @@ export default async function ProjectsPage() {
                 {project.due_date && (
                   <p className='mt-5 text-sm text-muted'>
                     Due date:{' '}
-                    <span className='font-medium text-slate-900'>
+                    <span className='font-medium text-card-foreground'>
                       {project.due_date}
                     </span>
                   </p>
@@ -173,7 +173,7 @@ export default async function ProjectsPage() {
                           className='flex items-center justify-between gap-3 rounded-2xl border border-slate-100 bg-background px-4 py-3'
                         >
                           <div>
-                            <p className='text-sm font-medium text-slate-900'>
+                            <p className='text-sm font-medium text-card-foreground'>
                               {task.title}
                             </p>
 
@@ -213,12 +213,12 @@ export default async function ProjectsPage() {
                           className='flex items-center justify-between gap-3 rounded-2xl border border-slate-100 bg-background px-4 py-3'
                         >
                           <div className='flex min-w-0 items-center gap-3'>
-                            <div className='flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-card text-slate-600'>
+                            <div className='flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-card text-muted'>
                               <FileText className='h-4 w-4' />
                             </div>
 
                             <div className='min-w-0'>
-                              <p className='truncate text-sm font-medium text-slate-900'>
+                              <p className='truncate text-sm font-medium text-card-foreground'>
                                 {file.file_name}
                               </p>
 

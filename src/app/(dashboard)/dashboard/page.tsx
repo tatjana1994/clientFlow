@@ -168,7 +168,9 @@ export default async function DashboardPage() {
                   className='flex items-center justify-between rounded-2xl bg-background px-4 py-4'
                 >
                   <div>
-                    <p className='font-medium text-slate-900'>{project.name}</p>
+                    <p className='font-medium text-card-foreground'>
+                      {project.name}
+                    </p>
                     <p className='text-sm text-muted'>{project.client_name}</p>
                   </div>
 
@@ -233,7 +235,7 @@ export default async function DashboardPage() {
                   key={task.id}
                   className='rounded-2xl border border-border px-4 py-3'
                 >
-                  <p className='text-sm font-medium text-slate-900'>
+                  <p className='text-sm font-medium text-card-foreground'>
                     {task.title}
                   </p>
 

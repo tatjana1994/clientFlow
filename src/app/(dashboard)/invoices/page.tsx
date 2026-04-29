@@ -121,7 +121,7 @@ export default async function InvoicesPage() {
                       {invoice.invoice_number}
                     </td>
 
-                    <td className='px-6 py-4 text-sm text-slate-600'>
+                    <td className='px-6 py-4 text-sm text-muted'>
                       {invoice.client_name}
                     </td>
 
@@ -129,7 +129,7 @@ export default async function InvoicesPage() {
                       {formatCurrency(Number(invoice.amount))}
                     </td>
 
-                    <td className='px-6 py-4 text-sm text-slate-600'>
+                    <td className='px-6 py-4 text-sm text-muted'>
                       {invoice.due_date || 'No due date'}
                     </td>
 

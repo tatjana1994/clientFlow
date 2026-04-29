@@ -69,7 +69,7 @@ export function DashboardSidebar() {
           <Link
             key={item.href}
             href={item.href}
-            className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-card-foreground'
+            className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-muted transition hover:bg-card/90 hover:text-card-foreground'
           >
             <item.icon className='h-4 w-4' />
             {item.label}
@@ -79,7 +79,7 @@ export function DashboardSidebar() {
       <div className='mt-10 border-t border-border pt-5'>
         <Link
           href='/'
-          className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-muted transition hover:bg-slate-100 hover:text-card-foreground'
+          className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-muted transition hover:bg-card/90 hover:text-card-foreground'
         >
           ← Back to website
         </Link>

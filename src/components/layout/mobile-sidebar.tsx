@@ -67,7 +67,7 @@ export function MobileSidebar() {
 
               <button
                 onClick={() => setIsOpen(false)}
-                className='rounded-xl border border-border p-2 text-slate-600'
+                className='rounded-xl border border-border p-2 text-muted'
                 aria-label='Close menu'
               >
                 <X className='h-4 w-4' />
@@ -80,7 +80,7 @@ export function MobileSidebar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-card-foreground'
+                  className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-muted transition hover:bg-card/90 hover:text-card-foreground'
                 >
                   <item.icon className='h-4 w-4' />
                   {item.label}
@@ -91,7 +91,7 @@ export function MobileSidebar() {
               <Link
                 href='/'
                 onClick={() => setIsOpen(false)}
-                className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-muted transition hover:bg-slate-100 hover:text-card-foreground'
+                className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-muted transition hover:bg-card/90 hover:text-card-foreground'
               >
                 ← Back to website
               </Link>

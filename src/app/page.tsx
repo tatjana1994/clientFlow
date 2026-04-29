@@ -328,7 +328,7 @@ export default function HomePage() {
               <h2 className='text-3xl font-semibold'>
                 Explore the live ClientFlow dashboard.
               </h2>
-              <p className='mt-3 max-w-2xl text-slate-600'>
+              <p className='mt-3 max-w-2xl text-muted'>
                 Create an account, generate demo workspace data and test the
                 full agency portal flow.
               </p>

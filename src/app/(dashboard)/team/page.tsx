@@ -25,7 +25,7 @@ function getStatusClass(status: string) {
     return 'bg-sky-50 text-sky-700';
   }
 
-  return 'bg-slate-100 text-slate-600';
+  return 'bg-slate-100 text-muted';
 }
 
 function getInitials(name: string) {

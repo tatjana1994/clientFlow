@@ -48,7 +48,7 @@ export function GenerateDemoButton() {
       </div>
 
       {message && (
-        <p className='mt-4 rounded-2xl bg-background px-4 py-3 text-sm text-slate-600'>
+        <p className='mt-4 rounded-2xl bg-background px-4 py-3 text-sm text-muted'>
           {message}
         </p>
       )}

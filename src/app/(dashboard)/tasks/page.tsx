@@ -37,7 +37,7 @@ function getPriorityClass(priority: string) {
     return 'bg-amber-50 text-amber-700';
   }
 
-  return 'bg-slate-100 text-slate-600';
+  return 'bg-slate-100 text-muted';
 }
 
 export default async function TasksPage({
@@ -260,11 +260,11 @@ export default async function TasksPage({
                         </p>
                       </td>
 
-                      <td className='px-6 py-4 text-sm text-slate-600'>
+                      <td className='px-6 py-4 text-sm text-muted'>
                         {project?.name || 'Unknown project'}
                       </td>
 
-                      <td className='px-6 py-4 text-sm text-slate-600'>
+                      <td className='px-6 py-4 text-sm text-muted'>
                         {project?.client_name || 'No client'}
                       </td>
 

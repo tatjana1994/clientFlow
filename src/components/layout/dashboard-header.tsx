@@ -24,7 +24,7 @@ export function DashboardHeader({ email }: DashboardHeaderProps) {
         <div className='flex shrink-0 items-center gap-3'>
           {email && (
             <div className='hidden text-right md:block'>
-              <p className='max-w-[220px] truncate text-sm font-medium text-slate-900'>
+              <p className='max-w-[220px] truncate text-sm font-medium text-card-foreground'>
                 {email}
               </p>
               <p className='text-xs text-muted'>Owner account</p>
