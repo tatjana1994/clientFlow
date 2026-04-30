@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import {
   BarChart3,
@@ -9,6 +11,8 @@ import {
   ReceiptText,
   Users,
 } from 'lucide-react';
+
+import { usePathname } from 'next/navigation';
 
 const navItems = [
   {
@@ -49,6 +53,7 @@ const navItems = [
 ];
 
 export function DashboardSidebar() {
+  const pathname = usePathname();
   return (
     <aside className='hidden min-h-screen w-72 border-r border-border bg-card px-5 py-6 lg:block'>
       <Link href='/dashboard' className='flex items-center gap-3'>
@@ -65,17 +70,28 @@ export function DashboardSidebar() {
       </Link>
 
       <nav className='mt-10 space-y-1'>
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-muted transition hover:bg-card/90 hover:text-card-foreground'
-          >
-            <item.icon className='h-4 w-4' />
-            {item.label}
-          </Link>
-        ))}
+        {navItems.map((item) => {
+          const isActive = pathname === item.href;
+
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium transition
+                ${
+                  isActive
+                    ? 'bg-slate-950 text-white shadow-sm'
+                    : 'text-muted hover:bg-card/90 hover:text-card-foreground'
+                }
+              `}
+            >
+              <item.icon className='h-4 w-4' />
+              {item.label}
+            </Link>
+          );
+        })}
       </nav>
+
       <div className='mt-10 border-t border-border pt-5'>
         <Link
           href='/'
