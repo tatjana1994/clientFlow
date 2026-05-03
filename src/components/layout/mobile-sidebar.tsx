@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import {
   BarChart3,
   CheckSquare,
@@ -27,26 +28,37 @@ const navItems = [
 
 export function MobileSidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   return (
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className='inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-card text-slate-700 lg:hidden'
-        aria-label='Open menu'
+        className='inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-sm lg:hidden'
       >
         <Menu className='h-5 w-5' />
       </button>
 
       {isOpen && (
-        <div className='fixed inset-0 z-50 lg:hidden'>
+        <div className='fixed inset-0 z-[9999] lg:hidden'>
           <button
-            className='absolute inset-0 bg-slate-950/40'
+            className='absolute inset-0 bg-slate-950/50 backdrop-blur-sm'
             onClick={() => setIsOpen(false)}
-            aria-label='Close menu overlay'
           />
 
-          <aside className='relative h-full w-[82%] max-w-xs bg-card px-5 py-6 shadow-2xl'>
+          <aside className='fixed left-0 top-0 z-[10000] h-dvh w-[82%] max-w-[320px] overflow-y-auto border-r border-slate-200 bg-white px-5 py-6 shadow-2xl'>
             <div className='flex items-center justify-between'>
               <Link
                 href='/dashboard'
@@ -58,40 +70,50 @@ export function MobileSidebar() {
                 </div>
 
                 <div>
-                  <p className='text-base font-semibold text-card-foreground'>
+                  <p className='text-base font-semibold text-slate-950'>
                     ClientFlow
                   </p>
-                  <p className='text-xs text-muted'>Agency Portal</p>
+                  <p className='text-xs text-slate-500'>Agency Portal</p>
                 </div>
               </Link>
 
               <button
                 onClick={() => setIsOpen(false)}
-                className='rounded-xl border border-border p-2 text-muted'
-                aria-label='Close menu'
+                className='rounded-xl border border-slate-200 p-2 text-slate-500'
               >
                 <X className='h-4 w-4' />
               </button>
             </div>
 
             <nav className='mt-10 space-y-1'>
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-muted transition hover:bg-card/90 hover:text-card-foreground'
-                >
-                  <item.icon className='h-4 w-4' />
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isActive =
+                  pathname === item.href ||
+                  pathname.startsWith(item.href + '/');
+
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium transition ${
+                      isActive
+                        ? 'bg-slate-950 text-white'
+                        : 'text-slate-600 hover:bg-slate-100'
+                    }`}
+                  >
+                    <item.icon className='h-4 w-4' />
+                    {item.label}
+                  </Link>
+                );
+              })}
             </nav>
-            <div className='mt-10 border-t border-border pt-5'>
+
+            <div className='mt-10 border-t border-slate-200 pt-5'>
               <Link
                 href='/'
                 onClick={() => setIsOpen(false)}
-                className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-muted transition hover:bg-card/90 hover:text-card-foreground'
+                className='flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 hover:bg-slate-100'
               >
                 ← Back to website
               </Link>

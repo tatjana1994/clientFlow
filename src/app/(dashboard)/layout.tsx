@@ -1,33 +1,37 @@
-import { DashboardHeader } from '@/src/components/layout/dashboard-header';
-import { DashboardSidebar } from '@/src/components/layout/dashboard-sidebar';
-import { createClient } from '@/src/lib/supabase/server';
-import { redirect } from 'next/navigation';
+import type { Metadata } from 'next';
 
-export default async function DashboardLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const supabase = await createClient();
+export const metadata: Metadata = {
+  title: 'ClientFlow Dashboard',
+  description:
+    'Manage projects, tasks, invoices and clients in one modern agency dashboard.',
+  metadataBase: new URL('clientflow.tatjanadevrnja.com'),
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  openGraph: {
+    title: 'ClientFlow – Agency Dashboard',
+    description:
+      'All your agency work in one place. Projects, tasks, invoices and more.',
+    url: 'https://clientflow.tatjanadevrnja.com/dashboard',
+    siteName: 'ClientFlow',
+    images: [
+      {
+        url: '/ogimage.png',
+        width: 1200,
+        height: 630,
+        alt: 'ClientFlow Dashboard',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 
-  if (!user) {
-    redirect('/login');
-  }
-  return (
-    <main className='min-h-screen bg-background text-foreground'>
-      <div className='flex'>
-        <DashboardSidebar />
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ClientFlow – Agency Dashboard',
+    description: 'Manage projects, tasks and invoices in one clean dashboard.',
+    images: ['/ogimage.png'],
+  },
 
-        <div className='min-h-screen flex-1'>
-          <DashboardHeader email={user.email} />
-
-          <div className='p-4 sm:p-6'>{children}</div>
-        </div>
-      </div>
-    </main>
-  );
-}
+  icons: {
+    icon: '/favicon.png',
+  },
+};
